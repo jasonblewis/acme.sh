@@ -15,8 +15,12 @@ RZ_PROVIDER="rimuhosting"
 RZ_KEY_VAR="RH_Key"
 RZ_API="https://rimuhosting.com/dns/dyndns.jsp"
 
-# Source the shared lib
-. "$LE_WORKING_DIR/dnsapi/lib/dns_rz_common.sh"
+# source the rimuhosting and zonomi common lib
+_common="${_SCRIPT_HOME%/}/dnsapi/lib/dns_rz_common.sh"
+[ -r "$_common" ] || { _err "Missing helper: $_common"; return 1; }
+. "$_common"
+
+
 
 # Exported entrypoints for acme.sh
 dns_rimuhosting_add() { rz_add "$@"; }

@@ -32,14 +32,14 @@ _rz_read_key() {
 _rz_request() {
   qstr=$1
   _rz_dbg "qstr: $qstr"
-  _zm_url="$RZ_API?api_key=$RZ_KEY&$qstr"
-  _rz_dbg "_url: $_zm_url"
-  response="$(_get "$_zm_url")" || return 1
+  _rz_url="$RZ_API?api_key=$RZ_KEY&$qstr"
+  _rz_dbg "_url: $_rz_url"
+  response="$(_get "$_rz_url")" || return 1
   _debug2 response "$response"
   _contains "$response" "<is_ok>OK:"
 }
 
-# Add or update a TXT record (mirrors original zonomi logic)
+# Add or update a TXT record
 # $1: fulldomain  $2: txtvalue
 rz_add() {
   fulldomain=$1
