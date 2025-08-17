@@ -1,4 +1,3 @@
-# ~/.acme.sh/dnsapi/lib/dns_rz_common.sh
 #!/usr/bin/env sh
 # shellcheck disable=SC2034
 

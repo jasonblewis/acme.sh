@@ -1,5 +1,4 @@
 #!/usr/bin/env sh
-# ~/.acme.sh/dnsapi/dns_zonomi.sh
 # shellcheck disable=SC2034
 
 dns_zonomi_info='zonomi.com
