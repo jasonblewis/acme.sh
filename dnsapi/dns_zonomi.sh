@@ -17,6 +17,8 @@ RZ_API="https://zonomi.com/app/dns/dyndns.jsp"
 # source the rimuhosting and zonomi common lib
 _common="${_SCRIPT_HOME%/}/dnsapi/lib/dns_rz_common.sh"
 [ -r "$_common" ] || { _err "Missing helper: $_common"; return 1; }
+
+# shellcheck source=lib/dns_rz_common.sh
 . "$_common"
 
 dns_zonomi_add() { rz_add "$@"; }
